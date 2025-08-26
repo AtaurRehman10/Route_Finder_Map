@@ -10,9 +10,3 @@ A modern web app for planning routes with real-time traffic data. Enter your sta
 - Interactive Google Maps display
 - Map controls: recenter, satellite view, fullscreen
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/route-finder-pro.git
-   cd route-finder-pro
