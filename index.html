@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Maps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">Route Finder Pro</div>
+        <div style="color: var(--text-secondary); font-size: 0.875rem">
+          Professional Route Planning
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Control Panel -->
+      <div class="control-panel">
+        <h1 class="panel-title">Plan Your Journey</h1>
+        <p class="panel-subtitle">
+          Enter your start point and destination to find the optimal route with
+          real-time traffic data.
+        </p>
+
+        <form id="route-form" class="route-form" autocomplete="off">
+          <div class="input-group">
+            <label class="input-label" for="start">Starting Point</label>
+            <div class="input-wrapper">
+              <input
+                id="start"
+                type="text"
+                class="route-input"
+                placeholder="Enter your starting location"
+                required
+                autocomplete="off"
+              />
+              <span class="input-icon">📍</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="end">Destination</label>
+            <div class="input-wrapper">
+              <input
+                id="end"
+                type="text"
+                class="route-input"
+                placeholder="Where do you want to go?"
+                required
+                autocomplete="off"
+              />
+              <span class="input-icon">🎯</span>
+            </div>
+          </div>
+
+          <!-- Travel Mode Selector -->
+          <div class="input-group">
+            <label class="input-label">Travel Mode</label>
+            <div class="travel-modes">
+              <div class="mode-btn active" data-mode="DRIVING">🚗 Drive</div>
+              <div class="mode-btn" data-mode="WALKING">🚶 Walk</div>
+              <div class="mode-btn" data-mode="TRANSIT">🚌 Transit</div>
+              <div class="mode-btn" data-mode="BICYCLING">🚲 Bike</div>
+            </div>
+          </div>
+
+          <button class="route-btn" type="submit" id="route-btn">
+            Find Best Route
+          </button>
+
+          <div class="error-message" id="error-msg" style="display: none"></div>
+        </form>
+
+        <div class="info-panel" id="info-panel">
+          <div class="info-content">
+            <div style="color: var(--text-secondary); text-align: center">
+              Enter locations above to calculate your route
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Container -->
+      <div class="map-container">
+        <div id="map"></div>
+
+        <!-- Map Controls -->
+        <div class="map-controls">
+          <div class="control-btn" id="recenter-btn" title="Recenter Map">
+            ⌖
+          </div>
+          <div class="control-btn" id="satellite-btn" title="Toggle Satellite">
+            🛰️
+          </div>
+          <div class="control-btn" id="fullscreen-btn" title="Fullscreen">
+            ⛶
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
